@@ -7,6 +7,7 @@ import { CONTACT_KEY } from "../../consts.js";
 
 // import initialContacts from "../../data/contacts.json";
 import { getFromLS, addToLS } from "../../helpers";
+import Notification from "../Notification/Notification.jsx";
 
 const debounce = (func, delay) => {
   let timer;
@@ -45,6 +46,8 @@ function App() {
     contact.name.toLowerCase().includes(filterText.toLowerCase())
   );
 
+  const emptyContacts = !userContacts.length;
+  const contactsNotFound = !emptyContacts && !filteredContacts.length;
   return (
     <PhoneBookContainer>
       <h1>Phonebook</h1>
@@ -54,6 +57,9 @@ function App() {
         contacts={filteredContacts}
         handleDeleteContact={handleDeleteContact}
       />
+
+      {emptyContacts && <Notification title={"No contacts yet"} />}
+      {contactsNotFound && <Notification title={"Contacts are not found"} />}
     </PhoneBookContainer>
   );
 }

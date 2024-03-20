@@ -11,11 +11,11 @@ const ContactListItem = ({ id, name, number, handleDeleteContact }) => {
       <div className={css.wrapper}>
         <div className={css.info}>
           <FaUser />
-          <p className={css.name}>{name}</p>
+          <p>{name}</p>
         </div>
         <div className={css.info}>
           <FaPhoneAlt />
-          <p className={css.name}>{number}</p>
+          <p>{number}</p>
         </div>
       </div>
       <button className={css.button} onClick={handleDelete}>
