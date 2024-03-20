@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
-import css from "./ContactListItem.module.css";
+import css from "./Contact.module.css";
 
-const ContactListItem = ({ id, name, number, handleDeleteContact }) => {
+const Contact = ({ id, name, number, handleDeleteContact }) => {
   const handleDelete = () => handleDeleteContact(id);
 
   return (
@@ -25,10 +25,10 @@ const ContactListItem = ({ id, name, number, handleDeleteContact }) => {
   );
 };
 
-ContactListItem.propTypes = {
+Contact.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   number: PropTypes.string,
   handleDeleteContact: PropTypes.func.isRequired,
 };
-export default ContactListItem;
+export default Contact;

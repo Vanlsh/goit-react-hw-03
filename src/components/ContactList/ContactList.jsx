@@ -1,4 +1,4 @@
-import ContactListItem from "../ContactListItem/ContactListItem";
+import Contact from "../Contact/Contact.jsx";
 import css from "./ContactList.module.css";
 import PropTypes from "prop-types";
 
@@ -6,7 +6,7 @@ const ContactList = ({ contacts, handleDeleteContact }) => {
   return (
     <ul className={css.list}>
       {contacts.map(({ id, name, number }) => (
-        <ContactListItem
+        <Contact
           key={id}
           id={id}
           name={name}
